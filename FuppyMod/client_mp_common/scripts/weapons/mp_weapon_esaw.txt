@@ -18,7 +18,10 @@ WeaponData
 	"leveled_pickup"								"1"
 
 	"damage_flags"									"DF_BULLET | DF_INSTANT | DF_DISMEMBERMENT"
-	"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_lmg"
+	// fuppy
+	"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_weapon_sniper"
+	"sound_volume"									"0.05"
+	//"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_lmg"
 
 	// Menu
 	"menu_category"                                 "lmg"
@@ -35,8 +38,26 @@ WeaponData
 	"viewmodel"   									"models/weapons/hemlock_br/ptpov_hemlock_br.mdl"
 	"playermodel" 									"models/weapons/hemlock_br/w_hemlock_br.mdl"
 
+	// fuppy
+	"projectilemodel" 								"models/weapons/bullets/projectile_40mm.mdl"
+	"projectile_trail_effect_0" 					"P_titan_sniper1"
+	"projectile_trail_effect_1" 					"P_titan_sniper2"
+	"projectile_trail_effect_2" 					"P_titan_sniper3"
+	"impact_effect_table" 							"titan_sniper"
+	// fuppy
+	"bolt_hitsize"									"0.0"
+	"bolt_hitsize_grow1_time"						"0.035"
+	"bolt_hitsize_grow1_size"						"2.0"
+	"bolt_hitsize_grow2_time"						"0.08"
+	"bolt_hitsize_grow2_size"						"4.0"
+	"bolt_hitsize_growfinal_lerptime"				"0.18"
+	"bolt_hitsize_growfinal_size"					"40.0"
+	"bolt_gravity_enabled"							"0"
+	"bolt_gravity_amount"							"0.0000"//0.500"
+	"bolt_speed"									"12000"
+
 	// Effects
-	"impact_effect_table" 							"pulse_bullet"
+	//"impact_effect_table" 							"pulse_bullet"
 	"tracer_effect_first_person"                    "P_wpn_tracer_pulse"
 	"tracer_effect"   								"P_wpn_tracer_pulse"
 
@@ -78,12 +99,17 @@ WeaponData
 	"sound_zoom_in"									"Weapon_LMG_ADS_In"
 	"sound_zoom_out"								"Weapon_LMG_ADS_Out"
 
+	//fuppy
+	"fire_sound_1_player_1p"						"Weapon_Titan_Sniper_Level_4_1P"
+	"fire_sound_1_player_3p"						"Weapon_Titan_Sniper_Level_4_3P"
+	"fire_sound_1_npc"								"Weapon_Titan_Sniper_Level_4_3P"
+	"fire_sound_2_player_3p"						"Weapon_Titan_Sniper_Level_4_3P"
 
-	"fire_sound_1_player_1p"						"Weapon_Devotion_SecondShot_1P"
-	"fire_sound_1_player_3p"						""
-	"fire_sound_1_npc"								"Weapon_ColdWar_Fire_3P"
+	//"fire_sound_1_player_1p"						"Weapon_Devotion_SecondShot_1P"
+	//"fire_sound_1_player_3p"						""
+	//"fire_sound_1_npc"								"Weapon_ColdWar_Fire_3P"
 	//"fire_sound_2_player_1p"						"Weapon_bulletCasings.Bounce"
-	"fire_sound_2_player_3p"						"Weapon_devotion_SecondShot_3P"
+	//"fire_sound_2_player_3p"						"Weapon_devotion_SecondShot_3P"
 
 	"low_ammo_sound_name_1"							"Devotion_LowAmmo_Shot1"
 	"low_ammo_sound_name_2"							"Devotion_LowAmmo_Shot2"

@@ -509,7 +509,7 @@ WeaponData
 		}
 	}
 
-	active_crosshair_count				"1"
+	active_crosshair_count				"2"
 	rui_crosshair_index					"0"
 
 	RUI_CrosshairData
@@ -541,7 +541,7 @@ WeaponData
 		Crosshair_2
 		{
 			"ui"						"ui/crosshair_gravstar"
-			"base_spread"				"0.0"
+			"base_spread"				"500.0"
 			Args
 			{
 				isFiring				weapon_is_firing
