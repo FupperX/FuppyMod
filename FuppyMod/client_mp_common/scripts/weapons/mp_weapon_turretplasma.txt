@@ -18,13 +18,19 @@ WeaponData
 	// Models
 	//"viewmodel"   								"models/weapons/auto_rocket_launcher_ARL/ptpov_ARL.mdl"
 	//"playermodel" 								"models/weapons/auto_rocket_launcher_ARL/w_ARL.mdl"
-	"projectilemodel" 								"models/weapons/bullets/projectile_arl.mdl"
+	// fuppy
+	"projectilemodel" 								"models/weapons/bullets/triple_threat_projectile.mdl"
+	"projectile_trail_effect_0" 					"P_wpn_meteor_trail"
+	"fire_sound_1_player_1p"						"Weapon_Kraber_Fire_1P"
+	"fire_sound_1_player_3p"						"Weapon_Kraber_Fire_3P"
+	"fire_sound_2"									"large_shell_drop"
+	//"projectilemodel" 								"models/weapons/bullets/projectile_arl.mdl"
 
 	// Effects
 	//"tracer_effect"   							"weapon_tracers_xo16"
 	"impact_effect_table" 							"exp_plasma_sm"
-	"projectile_trail_effect_0" 					"P_plasma_proj_SM"
-	"projectile_trail_effect_1" 					"P_plasma_proj_SM"
+	//"projectile_trail_effect_0" 					"P_plasma_proj_SM"
+	//"projectile_trail_effect_1" 					"P_plasma_proj_SM"
 	"vortex_absorb_effect"							"wpn_vortex_projectile_SuperSpec_FP"
 	"vortex_absorb_effect_third_person"				"wpn_vortex_projectile_SuperSpec"
 	"vortex_absorb_sound"							"Vortex_Shield_AbsorbRocket"

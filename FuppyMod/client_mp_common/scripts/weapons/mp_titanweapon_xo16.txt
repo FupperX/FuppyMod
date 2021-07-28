@@ -37,6 +37,12 @@ WeaponData
 
 	"damage_flags"									"DF_STOPS_TITAN_REGEN | DF_BULLET | DF_NO_SELF_DAMAGE | DF_KNOCK_BACK"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 
 	// Effects
 	//"tracer_effect"   							"weapon_tracers_40mm"

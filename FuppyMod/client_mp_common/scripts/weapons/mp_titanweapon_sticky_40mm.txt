@@ -103,6 +103,12 @@ WeaponData
 	"stat_accuracy"   								"50"
 	"stat_rof"										"65"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	// Models
 	"viewmodel"   									"models/weapons/thr_40mm/atpov_thr_40mm.mdl"
 	"playermodel" 									"models/weapons/thr_40mm/w_thr_40mm.mdl"

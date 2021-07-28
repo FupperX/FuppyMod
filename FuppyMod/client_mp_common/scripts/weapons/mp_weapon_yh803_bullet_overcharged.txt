@@ -34,9 +34,15 @@ WeaponData
 
 
 	//Sounds
-	"fire_sound_1_player_1p"						"LMG_shell"
-	"fire_sound_1_player_3p"						"LMG_shell"
-	"fire_sound_2"									"Coop_Weapon_SentryGun_SecondShot_3P"
+	// fuppy
+	"fire_sound_1_player_1p"						"Weapon_Kraber_Fire_1P"
+	"fire_sound_1_player_3p"						"Weapon_Kraber_Fire_3P"
+	"fire_sound_2"									"large_shell_drop"
+	"projectilemodel" 								"models/weapons/bullets/triple_threat_projectile.mdl"
+	"projectile_trail_effect_0" 					"P_wpn_meteor_trail"
+	//"fire_sound_1_player_1p"						"LMG_shell"
+	//"fire_sound_1_player_3p"						"LMG_shell"
+	//"fire_sound_2"									"Coop_Weapon_SentryGun_SecondShot_3P"
 	"looping_sounds"								"1"
 
 	"burst_or_looping_fire_sound_start_npc"			"Coop_Weapon_SentryGun_FirstShot_3P"

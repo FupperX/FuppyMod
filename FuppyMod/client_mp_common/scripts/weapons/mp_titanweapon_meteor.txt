@@ -117,6 +117,12 @@ WeaponData
 
 	"show_grenade_indicator"						"0"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	"fx_muzzle_flash_view"							"wpn_muzzleflash_40mm_fp"
 	"fx_muzzle_flash_world"							"wpn_muzzleflash_40mm"
 	"fx_muzzle_flash_attach"						"muzzle_flash"

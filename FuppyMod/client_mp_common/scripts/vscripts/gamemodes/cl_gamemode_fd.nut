@@ -1783,7 +1783,8 @@ void function FD_CustomDropshipIntro( int shipEHandle, float dropshipSpawnTime )
 	entity droz = CreatePropDynamic( FD_MODEL_DROZ )
 	droz.SetParent( dropShip, "ORIGIN" )
 	droz.MarkAsNonMovingAttachment()
-	droz.SetSkin( 2 ) //FD only skin; replaces "64" on helmet with new faction logo
+	// fuppy
+	//droz.SetSkin( 2 ) //FD only skin; replaces "64" on helmet with new faction logo
 	file.droz = droz
 
 	Assert( file.davisDropshipAnims.len() == file.drozDropshipAnims.len() )

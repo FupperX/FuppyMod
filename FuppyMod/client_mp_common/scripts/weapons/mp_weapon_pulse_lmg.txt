@@ -110,11 +110,23 @@ WeaponData
 	"playermodel" 									"models/weapons/pulse_lmg/w_pulse_lmg.mdl"
 	
 	// fuppy: replace with thermite launcher
-	"projectilemodel" 								"models/weapons/sentry_frag/sentry_frag_proj.mdl"
+	//"projectilemodel" 								"models/weapons/sentry_frag/sentry_frag_proj.mdl"
 	//"projectilemodel" 								"models/weapons/bullets/triple_threat_projectile.mdl"
 	//"projectile_trail_effect_0" 					"P_wpn_meteor_trail"
-	"projectile_trail_effect_0" 					"P_plasma_proj_LG_amp"
+	//"projectile_trail_effect_0" 					"P_plasma_proj_LG_amp"
+	"projectilemodel" 								"models/weapons/bullets/projectile_40mm.mdl"
+	"projectile_trail_effect_0" 					"P_titan_sniper1"
+	"projectile_trail_effect_1" 					"P_titan_sniper2"
+	"projectile_trail_effect_2" 					"P_titan_sniper3"
+	"impact_effect_table" 							"titan_sniper"
 	//"projectilemodel" 								"models/dev/empty_model.mdl"
+
+	
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
 
 	// Effects
 	//"tracer_effect"   							"weapon_tracers_xo16"
@@ -123,7 +135,7 @@ WeaponData
 	"fx_muzzle_flash_world"							"P_wpn_muzzleflash_coldwar"
 	"fx_muzzle_flash_attach"						"muzzle_flash"
 
-	"impact_effect_table" 							"exp_super_spectre"
+	//"impact_effect_table" 							"exp_super_spectre"
 	//"projectile_trail_effect_0" 					"P_plasma_proj_MD"
 //	"projectile_trail_effect_1" 					"P_plasma_proj_MD"
 //	"projectile_trail_attachment" 					"exhaust"

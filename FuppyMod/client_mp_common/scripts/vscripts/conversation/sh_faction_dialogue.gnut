@@ -32,7 +32,10 @@ struct {
 } file
 
 global const asset FD_MODEL_DAVIS	= $"models/humans/pilots/sp_medium_stalker_m.mdl" //Copied from SP. Ideally should be made a global const, but not touching SP files unless absolutely needed
-global const asset FD_MODEL_DROZ 	= $"models/humans/pilots/sp_medium_reaper_m.mdl" //Copied from SP. Ideally should be made a global const, but not touching SP files unless absolutely needed
+
+// fuppy: replace droz with gates
+global const asset FD_MODEL_DROZ 	= $"models/humans/pilots/sp_medium_geist_f.mdl"
+//global const asset FD_MODEL_DROZ 	= $"models/humans/pilots/sp_medium_reaper_m.mdl" //Copied from SP. Ideally should be made a global const, but not touching SP files unless absolutely needed
 global const asset FD_MODEL_DROZ_TABLET_PROP = $"models/props/tablet/tablet_mini.mdl"
 
 global table<string, FactionLeaderDataStruct > factionLeaderData

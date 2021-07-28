@@ -406,6 +406,13 @@ WeaponData
 	// Crosshair
 	"red_crosshair_range" 							"10000"
 
+	
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 
   // Bodygroups:
   "clip_bodygroup"						"titan_sniper_rifle_magazine"
@@ -415,6 +422,8 @@ WeaponData
   "clip_bodygroup_show_for_milestone_1"	"0"
   "clip_bodygroup_show_for_milestone_2"	"1"
   "clip_bodygroup_show_for_milestone_3"	"1"
+
+
 
 
 	Mods
@@ -517,7 +526,7 @@ WeaponData
 		DefaultArgs
 		{
 			adjustedSpread				weapon_spread
-			adsFrac 					player_zoomFrac
+			//adsFrac 					player_zoomFrac
 			isSprinting					player_is_sprinting
 			isReloading					weapon_is_reloading
 			readyFrac                   progress_ready_to_fire_frac
@@ -535,13 +544,14 @@ WeaponData
 			Args
 			{
 				isFiring				weapon_is_firing
+				adsFrac 					player_zoomFrac
 			}
 		}
 
 		Crosshair_2
 		{
-			"ui"						"ui/crosshair_gravstar"
-			"base_spread"				"500.0"
+			"ui"						"ui/crosshair_wingman_n"
+			"base_spread"				"0.0"
 			Args
 			{
 				isFiring				weapon_is_firing
