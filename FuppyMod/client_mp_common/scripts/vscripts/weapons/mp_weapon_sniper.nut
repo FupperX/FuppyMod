@@ -52,11 +52,22 @@ void function OnClientAnimEvent_weapon_sniper( entity weapon, string name )
 
 var function OnWeaponPrimaryAttack_weapon_sniper( entity weapon, WeaponPrimaryAttackParams attackParams )
 {
-	float volume = 0.2
-	var volumeField = weapon.GetWeaponInfoFileKeyField( "sound_volume" )
-	if(volumeField != null)
-		volume = expect float( volumeField )
-	weapon.EmitWeaponNpcSound( LOUD_WEAPON_AI_SOUND_RADIUS_MP, volume)
+	// float volume = 0.01
+	//var volumeField = weapon.GetWeaponInfoFileKeyField( "sound_volume" )
+	//if(volumeField != null)
+	//	volume = expect float( volumeField )
+	weapon.EmitWeaponNpcSound( LOUD_WEAPON_AI_SOUND_RADIUS_MP, 0.2)
+
+
+	// fuppy: sound test
+	// string conversationName = "elimEnemyPilot"
+	// int priority = GetConversationPriority( conversationName )
+	// string primeTitanString = ""
+	// string titanCharacterName = "vanguard"
+	// string soundAlias = "diag_gs_titan" + titanCharacterName + primeTitanString + "_" + conversationName
+	// PlayOneLinerConversationOnEntWithPriority( conversationName, soundAlias, weapon.GetWeaponOwner(), priority )
+	//PlayFactionDialogueOnLocalClientPlayer("aichat_killed_enemy_titan")
+
 
 	return FireWeaponPlayerAndNPC( weapon, attackParams, true )
 }

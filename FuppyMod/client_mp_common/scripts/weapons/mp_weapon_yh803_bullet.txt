@@ -48,7 +48,7 @@ WeaponData
 		"explosion_damage"								"20"
 	}
 
-	"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_weapon_yh803"
+	//"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_weapon_yh803"
 
 	// General
 	"printname"   									"#WPN_RSPN101"
@@ -85,19 +85,35 @@ WeaponData
 
 	//Sounds
 	// fuppy
-	"fire_sound_1_player_1p"						"Weapon_Kraber_Fire_1P"
-	"fire_sound_1_player_3p"						"Weapon_Kraber_Fire_3P"
+	"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_weapon_sniper"
+	"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_weapon_sniper"
+	"fire_sound_1_player_1p"						"Weapon_Titan_Sniper_Level_4_1P"
+	"fire_sound_1_player_3p"						"Weapon_Titan_Sniper_Level_4_3P"
 	"fire_sound_2"									"large_shell_drop"
 	"projectilemodel" 								"models/weapons/bullets/triple_threat_projectile.mdl"
 	"projectile_trail_effect_0" 					"P_wpn_meteor_trail"
+	"burst_or_looping_fire_sound_start_npc"			"Weapon_Titan_Sniper_Level_4_3P"
+	"burst_or_looping_fire_sound_middle_npc"		"Weapon_Titan_Sniper_Level_4_3P"
+	"burst_or_looping_fire_sound_end_npc"			"Weapon_Titan_Sniper_Level_4_3P"
+
+	"bolt_hitsize"									"0.0"
+	"bolt_hitsize_grow1_time"						"0.075"
+	"bolt_hitsize_grow1_size"						"5.0"
+	"bolt_hitsize_grow2_time"						"0.18"
+	"bolt_hitsize_grow2_size"						"8.0"
+	"bolt_hitsize_growfinal_lerptime"				"0.18"
+	"bolt_hitsize_growfinal_size"					"8.0"
+
+	"bolt_gravity_enabled"							"0"
+
 	//"fire_sound_1_player_1p"						"LMG_shell"
 	//"fire_sound_1_player_3p"						"LMG_shell"
 	//"fire_sound_2"									"Coop_Weapon_SentryGun_SecondShot_3P"
 	"looping_sounds"								"1"
 
-	"burst_or_looping_fire_sound_start_npc"			"Coop_Weapon_SentryGun_FirstShot_3P"
-	"burst_or_looping_fire_sound_middle_npc"		"Coop_Weapon_SentryGun_Loop_3P"
-	"burst_or_looping_fire_sound_end_npc"			"Coop_Weapon_SentryGun_LoopEnd_3P"
+	//"burst_or_looping_fire_sound_start_npc"			"Coop_Weapon_SentryGun_FirstShot_3P"
+	//"burst_or_looping_fire_sound_middle_npc"		"Coop_Weapon_SentryGun_Loop_3P"
+	//"burst_or_looping_fire_sound_end_npc"			"Coop_Weapon_SentryGun_LoopEnd_3P"
 
 	// Network
 	"net_optimize"		                            "1"

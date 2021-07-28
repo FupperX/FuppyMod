@@ -2854,6 +2854,32 @@ bool function EntHasModelSet( entity ent )
 	return true
 }
 
+string function GenerateRandomTitanOSAlias(entity titan, string aliasSuffix){
+
+	array<string> values = ["ion", "tone", "vanguard", "bt", "scorch", "legion", "ronin", "northstar"];
+	int index = RandomInt( values.len() )
+
+	string titanCharacterName = GetTitanCharacterName( titan )
+	string primeTitanString = ""
+
+	float f = RandomFloat(1)
+	if(f <= 0.33) {
+		titanCharacterName = "bt";
+	}
+	else if(f <= 0.66) {
+		titanCharacterName = values[index];
+
+		if ( RandomFloat(1) <= 0.5 && titanCharacterName != "vanguard" && titanCharacterName != "bt" )
+			primeTitanString = "_prime"
+	}
+	else if ( IsTitanPrimeTitan( titan ) )
+		primeTitanString = "_prime"
+
+	string modifiedAlias = "diag_gs_titan" + titanCharacterName + primeTitanString + "_" + aliasSuffix
+	return modifiedAlias
+
+}
+
 string function GenerateTitanOSAlias( entity player, string aliasSuffix )
 {
 	//HACK: Temp fix for blocker bug. Fixing correctly next.
@@ -2870,14 +2896,17 @@ string function GenerateTitanOSAlias( entity player, string aliasSuffix )
 			titan = player.GetPetTitan()
 
 		Assert( IsValid( titan ) )
-		string titanCharacterName = GetTitanCharacterName( titan )
-		string primeTitanString = ""
 
-		if ( IsTitanPrimeTitan( titan ) )
-			primeTitanString = "_prime"
+		// fuppy: random titan OS
+		return GenerateRandomTitanOSAlias(titan, aliasSuffix)
+		// string titanCharacterName = GetTitanCharacterName( titan )
+		// string primeTitanString = ""
 
-		string modifiedAlias = "diag_gs_titan" + titanCharacterName + primeTitanString + "_" + aliasSuffix
-		return modifiedAlias
+		// if ( IsTitanPrimeTitan( titan ) )
+		// 	primeTitanString = "_prime"
+
+		// string modifiedAlias = "diag_gs_titan" + titanCharacterName + primeTitanString + "_" + aliasSuffix
+		// return modifiedAlias
 	}
 	unreachable
 }

@@ -1776,18 +1776,49 @@ void function FD_CustomDropshipIntro( int shipEHandle, float dropshipSpawnTime )
 	entity localViewPlayer = GetLocalViewPlayer()
 
 	entity davis = CreatePropDynamic( FD_MODEL_DAVIS )
+	// fuppy: hide davis/droz
 	davis.SetParent( dropShip, "ORIGIN" )
 	davis.MarkAsNonMovingAttachment()
 	file.davis = davis
 
 	entity droz = CreatePropDynamic( FD_MODEL_DROZ )
+	// fuppy: hide davis/droz
 	droz.SetParent( dropShip, "ORIGIN" )
 	droz.MarkAsNonMovingAttachment()
-	// fuppy
-	//droz.SetSkin( 2 ) //FD only skin; replaces "64" on helmet with new faction logo
+	droz.SetSkin( 2 ) //FD only skin; replaces "64" on helmet with new faction logo
 	file.droz = droz
 
 	Assert( file.davisDropshipAnims.len() == file.drozDropshipAnims.len() )
+
+	//// fuppy: add gates
+	string faction = "faction_64"
+	FactionLeaderDataStruct factionLeaderInfo = factionLeaderData[ faction ]
+	entity factionLeader = CreatePropDynamic( GetFactionModel( faction ) )
+	factionLeader.SetParent( dropShip, "ORIGIN" )
+	factionLeader.MarkAsNonMovingAttachment()
+	factionLeader.SetSkin( GetFactionModelSkin( faction ) )
+
+	entity prop = null
+	if ( factionLeaderInfo.propModelName != $"" )
+	{
+		prop = CreatePropDynamic( factionLeaderInfo.propModelName )
+		prop.MarkAsNonMovingAttachment()
+		prop.SetParent( factionLeader, factionLeaderInfo.propAttachment )
+	}
+
+	array<string> dropshipAnimList = factionLeaderInfo.dropshipAnimList
+	bool useEasterEgg = RandomFloat( 100 ) <= 50.0
+	if ( factionLeaderInfo.easterEggDropshipAnimList.len() > 0 && useEasterEgg )
+	{
+		dropshipAnimList = factionLeaderInfo.easterEggDropshipAnimList
+	}
+
+	string dropshipAnim = dropshipAnimList.getrandom()
+	thread PlayAnim( factionLeader, dropshipAnim, dropShip, "ORIGIN" )
+	factionLeader.Anim_SetStartTime( dropshipSpawnTime )
+	factionLeader.LerpSkyScale( 0.9, 0.1 )
+	SetTeam( factionLeader, localViewPlayer.GetTeam() )
+	////
 
 	string davisAnim
 	string drozAnim
@@ -1832,7 +1863,7 @@ void function FD_CustomDropshipIntro( int shipEHandle, float dropshipSpawnTime )
 	dropShip.EndSignal( "OnDestroy" )
 
 	OnThreadEnd(
-	function() : ( davis, droz, drozProp )
+	function() : ( davis, droz, drozProp, factionLeader, prop )
 		{
 			if ( IsValid( davis ) )
 				davis.Destroy()
@@ -1842,6 +1873,12 @@ void function FD_CustomDropshipIntro( int shipEHandle, float dropshipSpawnTime )
 
 			if ( IsValid( drozProp ) )
 				drozProp.Destroy()
+
+			if ( IsValid( factionLeader ) ) //Need to check for this because if you disconnect it will delete that prop, then call this OnThreadEnd
+				factionLeader.Destroy()
+
+			if ( IsValid( prop ) )
+				prop.Destroy()
 		}
 	)
 

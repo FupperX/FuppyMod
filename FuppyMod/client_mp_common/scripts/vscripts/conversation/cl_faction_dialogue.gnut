@@ -34,12 +34,25 @@ file
 	global function Dev_ForceEasterEgg
 #endif
 
+void function PlayFactionDialogueDelayed(entity player, string conversationSuffix){
+	string factionChoice = GetFactionChoice( player )
+	string originalPrefix = factionLeaderData[ factionChoice ].dialoguePrefix
+	string original = "diag_" + originalPrefix + "_" + conversationSuffix
+
+	wait 3
+	EmitSoundOnEntity(player, original)
+}
+
 string function GenerateFactionDialogueAlias( entity player, string conversationSuffix  )
 {
 	string factionPrefix
-	if ( IsFactionLeaderOverriden() )
+	// fuppy: ignore dialogue override if original faction has voice line
+	if ( IsFactionLeaderOverriden()) // && !FactionHasConversation(GetFactionChoice(player), conversationSuffix) )
 	{
 	 	factionPrefix = file.overrideFactionLeaderData.dialoguePrefix //Mainly for Frontier Defence, where it has its own announcer. Don't want to override GetFactionChoice() because that's used by FactionXP etc.
+
+		// fuppy: still play original, just delayed
+		thread PlayFactionDialogueDelayed( player, conversationSuffix )
 	}
 	else
 	{

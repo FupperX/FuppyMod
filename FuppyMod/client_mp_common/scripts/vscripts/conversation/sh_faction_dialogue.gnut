@@ -5,6 +5,7 @@ global function GetFactionChoice
 global function GetEnemyFaction
 global function FactionUsesWaveform
 global function ConversationEnabledForFaction
+global function FactionHasConversation
 global function GetFactionCharacterName
 global function ConvertPlayerFactionToIMCOrMilitiaTeam
 #if SERVER
@@ -28,14 +29,18 @@ global struct FactionLeaderDataStruct
 struct {
 
 	table < string, table<string,bool> > factionDisabledLines
+	// fuppy
+	table < string, array<string> > factionEnabledLines
 
 } file
 
 global const asset FD_MODEL_DAVIS	= $"models/humans/pilots/sp_medium_stalker_m.mdl" //Copied from SP. Ideally should be made a global const, but not touching SP files unless absolutely needed
 
-// fuppy: replace droz with gates
-global const asset FD_MODEL_DROZ 	= $"models/humans/pilots/sp_medium_geist_f.mdl"
-//global const asset FD_MODEL_DROZ 	= $"models/humans/pilots/sp_medium_reaper_m.mdl" //Copied from SP. Ideally should be made a global const, but not touching SP files unless absolutely needed
+// fuppy: add gates const
+global const asset FD_MODEL_GATES 	= $"models/humans/pilots/sp_medium_geist_f.mdl"
+global const asset FD_MODEL_GATES_PISTOL_PROP = $"models/Weapons/p2011/w_p2011.mdl"
+
+global const asset FD_MODEL_DROZ 	= $"models/humans/pilots/sp_medium_reaper_m.mdl" //Copied from SP. Ideally should be made a global const, but not touching SP files unless absolutely needed
 global const asset FD_MODEL_DROZ_TABLET_PROP = $"models/props/tablet/tablet_mini.mdl"
 
 global table<string, FactionLeaderDataStruct > factionLeaderData
@@ -81,6 +86,8 @@ void function ShFactionDialogue_Init()
 
 		factionLeaderData[ persistenceRef ] <- factionLeaderInfo
 		file.factionDisabledLines[ persistenceRef ] <- {}
+		// fuppy
+		file.factionEnabledLines[ persistenceRef ] <- []
 	}
 
 	var factionLeaderDropshipAnimsTable = GetDataTable( $"datatable/faction_leaders_dropship_anims.rpak" ) //Only lists the various dropship anims. Consider moving prop name/prop attachment etc to this table too. (Menu uses those props too, which is why we haven't moved it yet)
@@ -120,8 +127,22 @@ void function ShFactionDialogue_Init()
 		foreach ( key,factionData in factionLeaderData )
 		{
 			file.factionDisabledLines[ key ][ conversationName ] <- factions.contains(key)
+			file.factionEnabledLines[ key ].push(conversationName)
 		}
 	}
+}
+
+bool function FactionHasConversation( string faction, string conversation )
+{
+	foreach(index, item in file.factionEnabledLines[ faction ]){
+		if(item == conversation){
+			return true;
+		}
+	}
+	
+	return false;
+
+	//return file.factionEnabledLines[ faction ].find( conversation ) != null
 }
 
 bool function ConversationEnabledForFaction( string faction, string conversation )

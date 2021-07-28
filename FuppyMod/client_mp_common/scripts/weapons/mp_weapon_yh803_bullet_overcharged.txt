@@ -35,11 +35,27 @@ WeaponData
 
 	//Sounds
 	// fuppy
+	// fuppy
+	"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_GenericBoltWithDrop_Player"
+	"OnWeaponNpcPrimaryAttack"						"OnWeaponPrimaryAttack_GenericBoltWithDrop_NPC"
 	"fire_sound_1_player_1p"						"Weapon_Kraber_Fire_1P"
 	"fire_sound_1_player_3p"						"Weapon_Kraber_Fire_3P"
 	"fire_sound_2"									"large_shell_drop"
 	"projectilemodel" 								"models/weapons/bullets/triple_threat_projectile.mdl"
 	"projectile_trail_effect_0" 					"P_wpn_meteor_trail"
+	"burst_or_looping_fire_sound_start_npc"			"Weapon_Kraber_Fire_3P"
+	"burst_or_looping_fire_sound_middle_npc"		"Weapon_Kraber_Fire_3P"
+	"burst_or_looping_fire_sound_end_npc"			"Weapon_Kraber_Fire_3P"
+
+	"bolt_hitsize"									"0.0"
+	"bolt_hitsize_grow1_time"						"0.075"
+	"bolt_hitsize_grow1_size"						"5.0"
+	"bolt_hitsize_grow2_time"						"0.18"
+	"bolt_hitsize_grow2_size"						"8.0"
+	"bolt_hitsize_growfinal_lerptime"				"0.18"
+	"bolt_hitsize_growfinal_size"					"8.0"
+
+	"bolt_gravity_enabled"							"0"
 	//"fire_sound_1_player_1p"						"LMG_shell"
 	//"fire_sound_1_player_3p"						"LMG_shell"
 	//"fire_sound_2"									"Coop_Weapon_SentryGun_SecondShot_3P"
