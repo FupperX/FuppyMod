@@ -1,0 +1,9 @@
+"lang"
+{
+	"Language" "english"
+	"Tokens"
+	{
+		//
+		"GAMEMODE_TEST"						    "TEST"
+	}
+}
