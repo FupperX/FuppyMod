@@ -99,7 +99,9 @@ void function OnDeactivate( entity weapon, int blockType )
 	asset first_fx
 	asset third_fx
 
-	if ( weapon.HasMod( "modelset_prime" ) )
+	// fuppy
+	if (true)
+	//if ( weapon.HasMod( "modelset_prime" ) )
 	{
 		first_fx = SWORD_GLOW_PRIME_FP
 		third_fx = SWORD_GLOW_PRIME
@@ -128,7 +130,9 @@ void function BlockSwordCoreFXThink( entity weapon, entity weaponOwner )
 	asset first_fx
 	asset third_fx
 
-	if ( weapon.HasMod( "modelset_prime" ) )
+	// fuppy
+	if (true)
+	//if ( weapon.HasMod( "modelset_prime" ) )
 	{
 		first_fx = SWORD_GLOW_PRIME_FP
 		third_fx = SWORD_GLOW_PRIME

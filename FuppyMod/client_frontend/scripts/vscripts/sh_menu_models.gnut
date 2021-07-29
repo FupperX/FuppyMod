@@ -1728,10 +1728,13 @@
 		if ( IsValid( file.menuTitan.prop ) )
 			file.menuTitan.prop.Destroy()
 
-		if ( bodyModel == $"models/titans/light/titan_light_locust.mdl" )
-			file.menuTitan.prop = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword.mdl", "SIDEARM_HOLSTER" )
-		else if ( bodyModel == $"models/titans/light/titan_light_ronin_prime.mdl" )
+		// fuppy
+		if ( bodyModel == $"models/titans/light/titan_light_locust.mdl" || bodyModel == $"models/titans/light/titan_light_ronin_prime.mdl" )
 			file.menuTitan.prop = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "SIDEARM_HOLSTER" )
+		// if ( bodyModel == $"models/titans/light/titan_light_locust.mdl" )
+		// 	file.menuTitan.prop = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword.mdl", "SIDEARM_HOLSTER" )
+		// else if ( bodyModel == $"models/titans/light/titan_light_ronin_prime.mdl" )
+		// 	file.menuTitan.prop = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "SIDEARM_HOLSTER" )
 
 		if ( IsValid( file.menuTitan.armBadge ) )
 			file.menuTitan.armBadge.Destroy()

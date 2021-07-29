@@ -21,6 +21,12 @@ WeaponData
 	"damage_flags"									"DF_BULLET | DF_DISMEMBERMENT"
 	"leveled_pickup"								"1"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	// Menu
 	"menu_category"                                 "pistol"
 	"menu_anim_class"                               "small"

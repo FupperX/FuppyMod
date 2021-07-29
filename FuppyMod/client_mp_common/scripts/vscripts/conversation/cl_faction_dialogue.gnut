@@ -34,13 +34,66 @@ file
 	global function Dev_ForceEasterEgg
 #endif
 
-void function PlayFactionDialogueDelayed(entity player, string conversationSuffix){
-	string factionChoice = GetFactionChoice( player )
-	string originalPrefix = factionLeaderData[ factionChoice ].dialoguePrefix
-	string original = "diag_" + originalPrefix + "_" + conversationSuffix
+void function PlayFactionDialogueDelayed(entity player, float delay, string faction, string conversationSuffix){
+	string soundPrefix = factionLeaderData[ faction ].dialoguePrefix
+	string soundAlias = "diag_" + soundPrefix + "_" + conversationSuffix
 
-	wait 3
-	EmitSoundOnEntity(player, original)
+	wait delay
+	EmitSoundOnEntity(player, soundAlias)
+}
+
+int function arrayIndex(array<string> values, string val){
+	foreach(index, item in values){
+		if(item == val){
+			return index;
+		}
+	}
+	return -1;
+}
+
+void function PlayAdditionalFactionDialogue(entity player, string conversationSuffix){
+
+	int num = 1
+
+	float f = RandomFloat(100)
+	if(f <= 25){
+		num = 4;
+	}
+	else if(f <= 50){
+		num = 3;
+	}
+	else if(f <= 75){
+		num = 2;
+	}
+
+	array<string> values = ["faction_64", "faction_apex", "faction_marvin", "faction_marauder", "faction_aces", "faction_vinson", "faction_ares"];
+	string factionChoice = GetFactionChoice( player )
+	
+	int fi = arrayIndex(values, factionChoice)
+	if(fi >= 0){
+		values.remove(fi);
+	}
+
+	array<string> toPlay = [];
+	
+	if(num > 1 || RandomFloat(100) > 25){
+		toPlay.push(factionChoice);
+		num -= 1;
+	}
+
+	for(int i = 0; i < num-1; i++) {
+		toPlay.push(values.remove(RandomInt(values.len())));
+	}
+
+	float delay = 0
+
+	foreach(index, faction in toPlay){
+		delay += RandomFloat(2) + 2
+		float d = delay
+		string f = faction
+		string s = conversationSuffix
+		thread PlayFactionDialogueDelayed( player, d, f, s )
+	}
 }
 
 string function GenerateFactionDialogueAlias( entity player, string conversationSuffix  )
@@ -52,7 +105,7 @@ string function GenerateFactionDialogueAlias( entity player, string conversation
 	 	factionPrefix = file.overrideFactionLeaderData.dialoguePrefix //Mainly for Frontier Defence, where it has its own announcer. Don't want to override GetFactionChoice() because that's used by FactionXP etc.
 
 		// fuppy: still play original, just delayed
-		thread PlayFactionDialogueDelayed( player, conversationSuffix )
+		PlayAdditionalFactionDialogue( player, conversationSuffix )
 	}
 	else
 	{

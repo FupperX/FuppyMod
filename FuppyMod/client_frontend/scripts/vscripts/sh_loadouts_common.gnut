@@ -746,10 +746,12 @@ void function GivePilotLoadout( entity player, PilotLoadoutDef loadout )
 		player.GiveOffhandWeapon( loadout.special, OFFHAND_SPECIAL, loadout.specialMods )
 	}
 
-	if ( loadout.melee != "" )
-	{
-		player.GiveOffhandWeapon( loadout.melee, OFFHAND_MELEE, loadout.meleeMods )
-	}
+	// fuppy
+	player.GiveOffhandWeapon( "melee_pilot_sword", OFFHAND_MELEE, ["pm0", "pm1", "pm2"] )
+	// if ( loadout.melee != "" )
+	// {
+	// 	player.GiveOffhandWeapon( loadout.melee, OFFHAND_MELEE, loadout.meleeMods )
+	// }
 
 	player.SetPlayerSettingsWithMods( loadout.setFile, loadout.setFileMods )
 	if ( loadout.camoIndex != 0 )

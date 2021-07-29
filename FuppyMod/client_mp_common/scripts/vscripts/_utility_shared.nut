@@ -2859,20 +2859,22 @@ string function GenerateRandomTitanOSAlias(entity titan, string aliasSuffix){
 	array<string> values = ["ion", "tone", "vanguard", "bt", "scorch", "legion", "ronin", "northstar"];
 	int index = RandomInt( values.len() )
 
-	string titanCharacterName = GetTitanCharacterName( titan )
+	string titanCharacterName = ""
+	if(IsValid( titan ))
+		titanCharacterName = GetTitanCharacterName( titan )
 	string primeTitanString = ""
 
 	float f = RandomFloat(1)
 	if(f <= 0.33) {
 		titanCharacterName = "bt";
 	}
-	else if(f <= 0.66) {
+	else if(f <= 0.66 || !IsValid( titan )) {
 		titanCharacterName = values[index];
 
 		if ( RandomFloat(1) <= 0.5 && titanCharacterName != "vanguard" && titanCharacterName != "bt" )
 			primeTitanString = "_prime"
 	}
-	else if ( IsTitanPrimeTitan( titan ) )
+	else if ( IsValid( titan ) && IsTitanPrimeTitan( titan ) )
 		primeTitanString = "_prime"
 
 	string modifiedAlias = "diag_gs_titan" + titanCharacterName + primeTitanString + "_" + aliasSuffix
@@ -2895,7 +2897,7 @@ string function GenerateTitanOSAlias( entity player, string aliasSuffix )
 		else
 			titan = player.GetPetTitan()
 
-		Assert( IsValid( titan ) )
+		// Assert( IsValid( titan ) )
 
 		// fuppy: random titan OS
 		return GenerateRandomTitanOSAlias(titan, aliasSuffix)

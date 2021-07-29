@@ -5,6 +5,10 @@ global function OnWeaponActivate_weapon_sniper
 global function OnWeaponPrimaryAttack_weapon_sniper
 global function OnProjectileCollision_weapon_sniper
 
+// fuppy
+// global function OnWeaponPrimaryAttack_weapon_custombolt
+// global function OnWeaponNpcPrimaryAttack_weapon_custombolt
+
 #if CLIENT
 global function OnClientAnimEvent_weapon_sniper
 #endif // #if CLIENT
@@ -88,8 +92,9 @@ int function FireWeaponPlayerAndNPC( entity weapon, WeaponPrimaryAttackParams at
 		shouldCreateProjectile = true
 
 	#if CLIENT
-		if ( !playerFired )
-			shouldCreateProjectile = false
+	// fuppy: we want NPCs to fire projectiles
+		// if ( !playerFired )
+		// 	shouldCreateProjectile = false
 	#endif
 
 	if ( shouldCreateProjectile )
@@ -106,6 +111,31 @@ int function FireWeaponPlayerAndNPC( entity weapon, WeaponPrimaryAttackParams at
 				StartParticleEffectOnEntity( bolt, GetParticleSystemIndex( $"Rocket_Smoke_SMR_Glow" ), FX_PATTACH_ABSORIGIN_FOLLOW, -1 )
 #endif // #if CLIENT
 		}
+	}
+
+	return 1
+}
+
+// var function OnWeaponPrimaryAttack_weapon_custombolt( entity weapon, WeaponPrimaryAttackParams attackParams ) {
+// 	weapon.EmitWeaponNpcSound( LOUD_WEAPON_AI_SOUND_RADIUS_MP, 0.2 )
+// 	FireCustomBolt(weapon, attackParams, true)
+// }
+// var function OnWeaponNpcPrimaryAttack_weapon_custombolt( entity weapon, WeaponPrimaryAttackParams attackParams ) {
+// 	weapon.EmitWeaponNpcSound( LOUD_WEAPON_AI_SOUND_RADIUS_MP, 0.2 )
+// 	FireCustomBolt(weapon, attackParams, false)
+// }
+
+var function FireCustomBolt( entity weapon, WeaponPrimaryAttackParams attackParams, bool playerFired ) {
+	int boltSpeed = expect int( weapon.GetWeaponInfoFileKeyField( "bolt_speed" ) )
+	int damageFlags = weapon.GetWeaponDamageFlags()
+	entity bolt = weapon.FireWeaponBolt( attackParams.pos, attackParams.dir, boltSpeed, damageFlags, damageFlags, playerFired, 0 )
+
+	if ( bolt != null ) {
+		bolt.kv.gravity = expect float( weapon.GetWeaponInfoFileKeyField( "bolt_gravity_amount" ) )
+
+#if CLIENT
+		StartParticleEffectOnEntity( bolt, GetParticleSystemIndex( $"Rocket_Smoke_SMR_Glow" ), FX_PATTACH_ABSORIGIN_FOLLOW, -1 )
+#endif // #if CLIENT
 	}
 
 	return 1

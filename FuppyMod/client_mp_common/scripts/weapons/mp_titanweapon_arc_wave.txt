@@ -14,8 +14,11 @@ WeaponData
 	"minimap_reveal_distance"						"32000"
 
 	// Models
-	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_emp_wave.mdl"
-	"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
+	// fuppy
+	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_prime_emp_wave.mdl"
+	"playermodel" 									"models/weapons/titan_sword/w_titan_sword_prime.mdl"
+	//"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_emp_wave.mdl"
+	//"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
 	"projectilemodel" 								"models/dev/empty_model.mdl"
 
 	"OnWeaponActivate"								"OnWeaponActivate_titanweapon_arcwave"

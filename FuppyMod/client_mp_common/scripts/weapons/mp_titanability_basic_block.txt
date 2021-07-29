@@ -38,8 +38,11 @@ WeaponData
 	}
 
 	// Models
-	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_block.mdl"
-	"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
+	// fuppy
+	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_prime_block.mdl"
+	"playermodel" 									"models/weapons/titan_sword/w_titan_sword_prime.mdl"
+	//"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_block.mdl"
+	//"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
 	"projectilemodel" 								"models/weapons/bullets/projectile_rocket.mdl"
 
 	"offhand_holster_primary"						"1"

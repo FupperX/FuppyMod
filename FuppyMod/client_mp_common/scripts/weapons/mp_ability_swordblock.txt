@@ -21,6 +21,12 @@ WeaponData
 	"OnWeaponAttemptOffhandSwitch"					"OnWeaponAttemptOffhandSwitch_ability_swordblock"
 	"OnWeaponChargeBegin"							"OnWeaponChargeBegin_ability_swordblock"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	"aimassist_disable_hipfire"						"1"
 	"aimassist_disable_ads"							"1"
 
@@ -36,8 +42,11 @@ WeaponData
 	}
 
 	// Models
-	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_block.mdl"
-	"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
+	// fuppy
+	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_prime_block.mdl"
+	"playermodel" 									"models/weapons/titan_sword/w_titan_sword_prime.mdl"
+	//"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_block.mdl"
+	//"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
 	"projectilemodel" 								"models/weapons/bullets/projectile_rocket.mdl"
 
 	"offhand_holster_primary"						"1"

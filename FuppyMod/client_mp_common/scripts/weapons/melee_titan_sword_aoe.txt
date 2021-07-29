@@ -16,9 +16,13 @@ WeaponData
 	"allow_empty_click"   							"1"
 
 	// Models
-	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword.mdl"
-	"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
-	"holstermodel"    								"models/weapons/titan_sword/w_titan_sword.mdl"
+	// fuppy
+	"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_prime.mdl"
+	"playermodel" 									"models/weapons/titan_sword/w_titan_sword_prime.mdl"
+	"holstermodel"    								"models/weapons/titan_sword/w_titan_sword_prime.mdl"
+	//"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword.mdl"
+	//"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
+	//"holstermodel"    								"models/weapons/titan_sword/w_titan_sword.mdl"
 
 	"damage_flags"									"DF_MELEE"
 	"impact_effect_table"							"titan_sword"

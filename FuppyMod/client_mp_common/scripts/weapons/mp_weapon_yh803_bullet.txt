@@ -85,8 +85,10 @@ WeaponData
 
 	//Sounds
 	// fuppy
-	"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_weapon_sniper"
-	"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_weapon_sniper"
+	"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_TurretPlasma"
+	"OnWeaponNpcPreAttack"							"OnWeaponNpcPreAttack_TurretPlasma"
+	//"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_weapon_custombolt"
+	//"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_weapon_custombolt"
 	"fire_sound_1_player_1p"						"Weapon_Titan_Sniper_Level_4_1P"
 	"fire_sound_1_player_3p"						"Weapon_Titan_Sniper_Level_4_3P"
 	"fire_sound_2"									"large_shell_drop"

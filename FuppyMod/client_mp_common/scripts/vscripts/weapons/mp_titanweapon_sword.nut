@@ -25,7 +25,9 @@ void function OnWeaponActivate_titanweapon_sword( entity weapon )
 {
 	if ( weapon.HasMod( "super_charged" ) )
 	{
-		if ( weapon.HasMod( "modelset_prime" ) )
+		// fuppy
+		if (true)
+		//if ( weapon.HasMod( "modelset_prime" ) )
 			weapon.PlayWeaponEffectNoCull( SWORD_GLOW_PRIME_FP, SWORD_GLOW_PRIME, "sword_edge" )
 		else
 			weapon.PlayWeaponEffectNoCull( SWORD_GLOW_FP, SWORD_GLOW, "sword_edge" )
@@ -46,7 +48,9 @@ void function OnWeaponActivate_titanweapon_sword( entity weapon )
 
 void function OnWeaponDeactivate_titanweapon_sword( entity weapon )
 {
-	if ( weapon.HasMod( "modelset_prime" ) )
+	// fuppy
+	if (true)
+	//if ( weapon.HasMod( "modelset_prime" ) )
 		weapon.StopWeaponEffect( SWORD_GLOW_PRIME_FP, SWORD_GLOW_PRIME )
 	else
 		weapon.StopWeaponEffect( SWORD_GLOW_FP, SWORD_GLOW )

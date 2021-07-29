@@ -1401,6 +1401,27 @@ void function ServerCallback_OnEntityKilled( attackerEHandle, victimEHandle, int
 	else if ( (IsGrunt( victim ) || IsSpectre( victim )) && attacker == localClientPlayer )
 	{
 		thread PlayKillConfirmedSound( "HUD_Grunt_Killed_Indicator" )
+
+		// fuppy
+		if(RandomFloat(100) <= 35 || damageSourceId == eDamageSourceId.human_execution){
+			string conversationName = "elimEnemyPilot"
+			if(RandomFloat(100) <= 40)
+				conversationName = "elimTarget"
+			int priority = GetConversationPriority( conversationName )
+			string soundAlias = GenerateTitanOSAlias( GetLocalClientPlayer(), conversationName )
+			PlayOneLinerConversationOnEntWithPriority( conversationName, soundAlias, GetLocalClientPlayer(), priority )
+		}
+	}
+	else if ( (IsSuperSpectre( victim )) && attacker == localClientPlayer )
+	{
+		// fuppy
+		if(RandomFloat(100) <= 65){
+			string conversationName = "elimTarget"
+			int priority = GetConversationPriority( conversationName )
+			string soundAlias = GenerateTitanOSAlias( GetLocalClientPlayer(), conversationName )
+			PlayOneLinerConversationOnEntWithPriority( conversationName, soundAlias, GetLocalClientPlayer(), priority )
+		}
+		// EmitSoundOnEntity( GetLocalClientPlayer(), soundAlias )
 	}
 
 	//if it's an auto titan, the obit was already printed when doomed
