@@ -20,6 +20,12 @@ WeaponData
 	//"viewmodel"   									"models/weapons/titan_sword/atpov_titan_sword_emp_wave.mdl"
 	//"playermodel" 									"models/weapons/titan_sword/w_titan_sword.mdl"
 	"projectilemodel" 								"models/dev/empty_model.mdl"
+	
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
 
 	"OnWeaponActivate"								"OnWeaponActivate_titanweapon_arcwave"
 	"OnWeaponDeactivate"							"OnWeaponDeactivate_titanweapon_arcwave"

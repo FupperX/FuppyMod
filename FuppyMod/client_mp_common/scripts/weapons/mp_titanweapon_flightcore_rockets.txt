@@ -19,6 +19,12 @@ WeaponData
 	"OnWeaponPrimaryAttack"							"OnWeaponPrimaryAttack_titanweapon_flightcore_rockets"
 	"OnWeaponNpcPrimaryAttack"						"OnWeaponNpcPrimaryAttack_titanweapon_flightcore_rockets"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	"aimassist_disable_hipfire_humansonly"			"1"
 	"aimassist_disable_ads_humansonly"				"1"
 

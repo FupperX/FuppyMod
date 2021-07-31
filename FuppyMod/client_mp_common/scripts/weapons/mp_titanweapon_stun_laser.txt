@@ -17,6 +17,12 @@ WeaponData
 	"weaponClass" 									"titan"
 	"weaponType"									"shoulder"
 	"fire_mode"   									"offhand"
+	
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
 
 	/////////
 	// Ammo

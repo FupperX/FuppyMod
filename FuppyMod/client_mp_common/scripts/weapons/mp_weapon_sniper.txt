@@ -298,6 +298,12 @@ WeaponData
 	"viewmodel_shake_up"							"0.1"
 	"viewmodel_shake_right"							"0.0"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	// Bob
 	"bob_cycle_time"  								"0.4"
 	"bob_vert_dist"   								"0.19"

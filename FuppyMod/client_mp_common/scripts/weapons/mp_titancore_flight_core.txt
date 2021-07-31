@@ -23,6 +23,12 @@ WeaponData
 	"ammo_clip_size"   								"200"
 	"ammo_default_total"							"200"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	"sustained_discharge_duration"					"6.0" // core duration
 	"sustained_discharge_pulse_frequency"			"0.5"
 	"sustained_discharge_require_input"				"0"

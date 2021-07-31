@@ -448,6 +448,12 @@ WeaponData
 	"pass_through_depth"							"0"
 	"pass_through_damage_preserved_scale"			"1.0"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 
 	Mods
 	{

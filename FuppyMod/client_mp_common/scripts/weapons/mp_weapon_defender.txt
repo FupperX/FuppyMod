@@ -40,6 +40,12 @@ WeaponData
 	"vortex_impact_sound_3p"						"vortex_shield_deflect_amped"
 	"vortex_refire_behavior"  						"absorb"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	// Models
 	"viewmodel"   									"models/weapons/defender/ptpov_defender.mdl"
 	"playermodel" 									"models/weapons/defender/w_defender.mdl"

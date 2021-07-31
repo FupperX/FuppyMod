@@ -43,6 +43,12 @@ WeaponData
 	"stat_accuracy"   								"100"
 	"stat_rof"										"17"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	// Models
 	"viewmodel"   									"models/weapons/epg/ptpov_epg.mdl"
 	"playermodel" 									"models/weapons/epg/w_epg.mdl"

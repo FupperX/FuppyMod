@@ -17,6 +17,12 @@ WeaponData
 	"alwaysShow"									"1"
 	"minimap_reveal_distance"						"32000"
 
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+
 	"OnWeaponActivate"								"OnWeaponActivate_titanweapon_heat_shield"
 	"OnWeaponDeactivate"							"OnWeaponDeactivate_titanweapon_heat_shield"
 	"OnWeaponCustomActivityStart"					"OnWeaponCustomActivityStart_titanweapon_heat_shield"
