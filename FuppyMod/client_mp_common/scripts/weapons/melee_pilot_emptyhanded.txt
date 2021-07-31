@@ -16,13 +16,8 @@ WeaponData
 	"never_drop"									"1"
 
 	// Models
-	// fuppy: sword
-	"viewmodel"   									"models/weapons/bolo_sword/ptpov_bolo_sword.mdl"
-	"playermodel" 									"models/weapons/bolo_sword/w_bolo_sword.mdl"
-	"melee_sound_attack_1p"							"Player_Melee_Backhand_1P"
-	"melee_anim_1p_number"							"1"								// ACT_VM_MELEE_ATTACK1, 2, or 3
-	//"viewmodel"   									"models/weapons/empty_handed/ptpov_emptyhand.mdl"
-	//"playermodel" 									"models/weapons/empty_handed/w_empty_handed_human.mdl"
+	"viewmodel"   									"models/weapons/empty_handed/ptpov_emptyhand.mdl"
+	"playermodel" 									"models/weapons/empty_handed/w_empty_handed_human.mdl"
 
 	// Melee
 	"melee_can_hit_humansized"						"1"
@@ -51,8 +46,7 @@ WeaponData
 		"melee_damage_heavyarmor"						"0"
 		"melee_attack_animtime"							"0"
 		"melee_lunge_time"								"0.3"
-		// fuppy
-		//"melee_anim_1p_number"							"2"
+		"melee_anim_1p_number"							"2"
 	}
 
 	SP_BASE
@@ -74,23 +68,18 @@ WeaponData
 	"viewkick_pitch_base" 							"-1.75"
 	"viewkick_pitch_random"   						"0.75"
 	"viewkick_pitch_softScale"						"0.3"
-	// fuppy
-	"viewkick_pitch_hardScale"						"10.5"
-	//"viewkick_pitch_hardScale"						"5.5"
+	"viewkick_pitch_hardScale"						"5.5"
 
-	"viewkick_yaw_base"   							"-1.0"
-	//"viewkick_yaw_base"   							"1.0"
+	"viewkick_yaw_base"   							"1.0"
 	"viewkick_yaw_random" 							"0.38"
 	"viewkick_yaw_softScale"  						"0.38"
-	"viewkick_yaw_hardScale"  						"30.5"
-	//"viewkick_yaw_hardScale"  						"15.5"
+	"viewkick_yaw_hardScale"  						"15.5"
 
 	"viewkick_roll_base"  							"0"
 	"viewkick_roll_randomMin" 						"0.6"
 	"viewkick_roll_randomMax" 						"0.8"
 	"viewkick_roll_softScale" 						"0.2"
-	"viewkick_roll_hardScale" 						"10.0"
-	//"viewkick_roll_hardScale" 						"20.75"
+	"viewkick_roll_hardScale" 						"20.75"
 
 	//
 	"damage_rodeo" 									"100"
@@ -138,58 +127,6 @@ WeaponData
 	//"sway_turn_right_rotate_yaw"  					"1"
 	//"sway_turn_up_rotate_pitch"   					"1"
 	//"sway_turn_down_rotate_pitch" 					"-1"
-
-	// fuppy
-	"bob_cycle_time"  								"0.45"
-	"bob_vert_dist"   								"0.075"
-	"bob_horz_dist"   								"0.05"
-	"bob_max_speed"   								"150"
-	"bob_pitch"   									"0.75"
-	"bob_yaw" 										"1"
-	"bob_roll"										"-0.75"
-
-	// View Drift
-	"viewdrift_hipfire_stand_scale_pitch" 			"0.325"
-	"viewdrift_hipfire_crouch_scale_pitch"			"0.275"
-	"viewdrift_hipfire_air_scale_pitch"   			"0.5"
-	"viewdrift_hipfire_stand_scale_yaw"   			"0.12"
-	"viewdrift_hipfire_crouch_scale_yaw"  			"0.10"
-	"viewdrift_hipfire_air_scale_yaw" 				"0.22"
-	"viewdrift_hipfire_speed_pitch"   				"0.6"
-	"viewdrift_hipfire_speed_yaw" 					"1.22"
-
-	// Sway
-	"sway_rotate_attach"  							"SWAY_ROTATE"
-	"sway_min_x"  									"-0.3"
-	"sway_min_y"  									"-0.5"
-	"sway_min_z"  									"-0.5"
-	"sway_max_x"  									"0.3"
-	"sway_max_y"  									"0.5"
-	"sway_max_z"  									"0.1"
-	"sway_min_pitch"  								"-3"
-	"sway_min_yaw"									"-3.5"
-	"sway_min_roll"   								"-2"
-	"sway_max_pitch"  								"3"
-	"sway_max_yaw"									"3.5"
-	"sway_max_roll"   								"3"
-	"sway_translate_gain" 							"10"
-	"sway_rotate_gain"								"12"
-	"sway_move_forward_translate_x"   				"0"
-	"sway_move_forward_translate_z"   				"-0.5"
-	"sway_move_back_translate_x"  					"-2"
-	"sway_move_back_translate_z"  					"-1"
-	"sway_move_left_translate_y"  					"-1"
-	"sway_move_left_translate_z"  					"-0.5"
-	"sway_move_left_rotate_roll"  					"-2"
-	"sway_move_right_translate_y" 					"1"
-	"sway_move_right_translate_z" 					"-0.5"
-	"sway_move_right_rotate_roll" 					"4"
-	"sway_move_up_translate_z"						"-1"
-	"sway_move_down_translate_z"  					"1"
-	"sway_turn_left_rotate_yaw"   					"-1"
-	"sway_turn_right_rotate_yaw"  					"1"
-	"sway_turn_up_rotate_pitch"   					"1"
-	"sway_turn_down_rotate_pitch" 					"-1"
 
 	// WeaponED Unhandled Key/Values and custom script Key/Values
 	"deployfirst_time"								"1.25"
