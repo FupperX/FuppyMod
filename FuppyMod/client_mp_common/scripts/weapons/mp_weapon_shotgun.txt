@@ -30,6 +30,16 @@ WeaponData
 	"stat_accuracy"   								"30"
 	"stat_rof"										"34"
 
+
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
+	
+	"projectile_trail_effect_0" 					"P_projectile_lstar"
+	"impact_effect_table" 							"lstar"
+	
 	// Models
 	"viewmodel"   									"models/weapons/w1128/ptpov_w1128.mdl"
 	"playermodel" 									"models/weapons/w1128/w_w1128.mdl"

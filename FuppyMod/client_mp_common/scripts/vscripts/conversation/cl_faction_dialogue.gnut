@@ -39,9 +39,10 @@ void function PlayFactionDialogueDelayed(entity player, float delay, string fact
 	string soundAlias = "diag_" + soundPrefix + "_" + conversationSuffix
 
 	wait delay
-	if(player != null){
-		EmitSoundOnEntity(player, soundAlias)
-	}
+	if(player == null || !IsValid(player))
+		return
+
+	EmitSoundOnEntity(player, soundAlias)
 }
 
 int function arrayIndex(array<string> values, string val){

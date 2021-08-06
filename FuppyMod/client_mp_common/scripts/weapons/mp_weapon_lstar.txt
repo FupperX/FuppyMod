@@ -41,6 +41,12 @@ WeaponData
 	"projectilemodel" 								"models/dev/empty_model.mdl"
 	"holstermodel"									"models/weapons/lstar/w_lstar_stow.mdl"
 	"holster_type"									"rifle"
+	
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
 
 	// Effects
 	"projectile_trail_effect_0" 					"P_projectile_lstar"

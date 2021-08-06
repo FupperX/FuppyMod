@@ -79,7 +79,7 @@ WeaponData
 
 	// Effects
 	"tracer_effect"   								"weapon_tracers_shotgun"
-	"impact_effect_table" 							"titan_shotgun_bullet"
+	//"impact_effect_table" 							"titan_shotgun_bullet"
 	"projectile_adjust_to_gun_barrel"				"1"
 	"projectile_airburst_on_death"					"1"
 
@@ -90,7 +90,10 @@ WeaponData
 
 	"projectilemodel" 								"models/dev/empty_model.mdl"
 	//"projectile_trail_effect_0" 					"P_dragonsbreath_trail"
-	"projectile_trail_effect_0" 					"P_leadwall_proj"
+	// fuppy
+	//"projectile_trail_effect_0" 					"P_leadwall_proj"
+	"projectile_trail_effect_0" 					"P_projectile_lstar"
+	"impact_effect_table" 							"lstar"
 
 	"sound_dryfire"									"shotgun_dryfire"
 	"fire_sound_1_player_1p"						"Weapon_Leadwall_Fire_1P"

@@ -38,6 +38,12 @@ WeaponData
 	//"projectilemodel" 								"models/weapons/bullets/projectile_20mm.mdl"
 	// fuppy
 	"projectilemodel" 								"models/weapons/bullets/projectile_40mm.mdl"
+	
+	// fuppy
+	"threat_scope_enabled"			"1"
+	"threat_scope_bounds_width"		"1.5"
+	"threat_scope_bounds_height"	"1.1"
+	"threat_scope_fadeWithDistance"	"0"
 
 	// Effects
 //	"tracer_effect_first_person"                    "P_wpn_tracer"

@@ -114,10 +114,16 @@ WeaponData
 	//"projectilemodel" 								"models/weapons/bullets/triple_threat_projectile.mdl"
 	//"projectile_trail_effect_0" 					"P_wpn_meteor_trail"
 	//"projectile_trail_effect_0" 					"P_plasma_proj_LG_amp"
-	"projectilemodel" 								"models/weapons/bullets/projectile_40mm.mdl"
-	"projectile_trail_effect_0" 					"P_titan_sniper1"
-	"projectile_trail_effect_1" 					"P_titan_sniper2"
-	"projectile_trail_effect_2" 					"P_titan_sniper3"
+	
+	// Effects
+	"projectilemodel" 								"models/dev/empty_model.mdl"
+	"projectile_trail_effect_0" 					"P_projectile_lstar"
+	"impact_effect_table" 							"lstar"
+	//"projectilemodel" 								"models/weapons/bullets/projectile_40mm.mdl"
+	//"projectile_trail_effect_0" 					"P_titan_sniper1"
+	//"projectile_trail_effect_1" 					"P_titan_sniper2"
+	//"projectile_trail_effect_2" 					"P_titan_sniper3"
+
 	"impact_effect_table" 							"titan_sniper"
 	//"projectilemodel" 								"models/dev/empty_model.mdl"
 
