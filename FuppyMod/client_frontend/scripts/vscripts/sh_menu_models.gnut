@@ -52,6 +52,7 @@
 		entity body
 		entity weapon
 		entity prop
+		entity prop2
 		entity armBadge
 		string attachName
 		string bodyAnim
@@ -1727,10 +1728,14 @@
 
 		if ( IsValid( file.menuTitan.prop ) )
 			file.menuTitan.prop.Destroy()
+		if ( IsValid( file.menuTitan.prop2 ) )
+			file.menuTitan.prop2.Destroy()
 
 		// fuppy
-		if ( bodyModel == $"models/titans/light/titan_light_locust.mdl" || bodyModel == $"models/titans/light/titan_light_ronin_prime.mdl" )
+		if ( bodyModel == $"models/titans/light/titan_light_locust.mdl" || bodyModel == $"models/titans/light/titan_light_ronin_prime.mdl" ) {
 			file.menuTitan.prop = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "SIDEARM_HOLSTER" )
+		}
+		file.menuTitan.prop2 = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_R_shoulder" )
 		// if ( bodyModel == $"models/titans/light/titan_light_locust.mdl" )
 		// 	file.menuTitan.prop = CreateAttachedModel( file.menuTitan.body, $"models/weapons/titan_sword/w_titan_sword.mdl", "SIDEARM_HOLSTER" )
 		// else if ( bodyModel == $"models/titans/light/titan_light_ronin_prime.mdl" )
@@ -2597,6 +2602,8 @@
 			file.menuTitan.weapon.Show()
 			if ( IsValid( file.menuTitan.prop ) )
 				file.menuTitan.prop.Show()
+			if ( IsValid( file.menuTitan.prop2 ) )
+				file.menuTitan.prop2.Show()
 			if ( IsValid( file.menuTitan.armBadge ) )
 				file.menuTitan.armBadge.Show()
 		}
@@ -2606,6 +2613,8 @@
 			file.menuTitan.weapon.Hide()
 			if ( IsValid( file.menuTitan.prop ) )
 				file.menuTitan.prop.Hide()
+			if ( IsValid( file.menuTitan.prop2 ) )
+				file.menuTitan.prop2.Hide()
 			if ( IsValid( file.menuTitan.armBadge ) )
 				file.menuTitan.armBadge.Hide()
 		}

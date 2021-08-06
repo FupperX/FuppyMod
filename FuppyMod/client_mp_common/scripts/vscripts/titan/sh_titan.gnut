@@ -41,6 +41,10 @@ struct
 	float titanVOEjectNotifyDist = 2000 * 2000
 } file
 
+struct
+{
+	table< entity, array<entity> > pairs
+} swords
 
 function TitanShared_Init()
 {
@@ -55,6 +59,11 @@ function TitanShared_Init()
 	RegisterSignal( "EjectLand" )
 	RegisterSignal( "EjectAttempt" )
 	RegisterSignal( "TempAirControl" )
+	
+	AddCreateCallback( "npc_titan", OnNPCTitanCreated )
+	AddDestroyCallback( "npc_titan", OnNPCTitanDestroyed )
+	AddCreateCallback( "titan_soul", OnTitanSoulCreate )
+	AddDestroyCallback( "titan_soul", OnTitanSoulDestroyed )
 
 	#if SERVER
 		AddSoulSettingsChangeFunc( UpdateTitanPanel )
@@ -74,6 +83,65 @@ function TitanShared_Init()
 
 		PrecacheModel( $"models/industrial/bolt_tiny01.mdl" )
 	#endif
+}
+
+entity function CreateAttachedModel( entity baseEnt, asset model, string attachName, vector offset )
+{
+	int attachIndex = baseEnt.LookupAttachment( attachName )
+	vector origin = baseEnt.GetAttachmentOrigin( attachIndex )
+	vector angles = baseEnt.GetAttachmentAngles( attachIndex )
+
+	angles = AnglesCompose(angles, offset)
+
+	entity propEnt = CreateClientSidePropDynamic( origin, angles, model )
+	propEnt.SetParent( baseEnt, attachName, false, 0.0 )
+	propEnt.MakeSafeForUIScriptHack()
+
+	return propEnt
+}
+
+void function attachSword(entity titan){
+
+	if(titan in swords.pairs){
+		return
+	}
+
+	entity sword1 = CreateAttachedModel(titan, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_R_shoulder", <0,180,0>)
+	entity sword2 = CreateAttachedModel(titan, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_L_shoulder", <0,0,180>)
+
+	swords.pairs[titan] <- [sword1, sword2];
+}
+
+void function deleteSword(entity titan){
+
+	if(!(titan in swords.pairs)){
+		return
+	}
+
+	foreach(sword in swords.pairs[titan]){
+		sword.Destroy()
+	}
+	
+	delete swords.pairs[titan]
+}
+
+void function OnNPCTitanCreated( entity titan )
+{
+	attachSword(titan)
+}
+
+void function OnNPCTitanDestroyed(entity titan)
+{
+	deleteSword(titan)
+}
+
+void function OnTitanSoulCreate( entity soul )
+{
+	attachSword(soul.GetTitan())
+}
+void function OnTitanSoulDestroyed( entity soul )
+{
+	deleteSword(soul.GetTitan())
 }
 
 #if SERVER
