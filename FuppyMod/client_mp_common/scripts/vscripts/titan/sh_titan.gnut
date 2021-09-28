@@ -61,8 +61,9 @@ function TitanShared_Init()
 	RegisterSignal( "TempAirControl" )
 	
 	AddCreateCallback( "npc_titan", OnNPCTitanCreated )
+	AddOnDeathCallback( "npc_titan", OnNPCTitanDestroyed )
 	AddDestroyCallback( "npc_titan", OnNPCTitanDestroyed )
-	AddCreateCallback( "titan_soul", OnTitanSoulCreate )
+	//AddCreateCallback( "titan_soul", OnTitanSoulCreate )
 	AddDestroyCallback( "titan_soul", OnTitanSoulDestroyed )
 
 	#if SERVER
@@ -91,10 +92,12 @@ entity function CreateAttachedModel( entity baseEnt, asset model, string attachN
 	vector origin = baseEnt.GetAttachmentOrigin( attachIndex )
 	vector angles = baseEnt.GetAttachmentAngles( attachIndex )
 
-	angles = AnglesCompose(angles, offset)
+	// angles = AnglesCompose(angles, offset)
+	// vector angles = offset
 
 	entity propEnt = CreateClientSidePropDynamic( origin, angles, model )
 	propEnt.SetParent( baseEnt, attachName, false, 0.0 )
+	propEnt.SetLocalAngles(offset)
 	propEnt.MakeSafeForUIScriptHack()
 
 	return propEnt
@@ -106,10 +109,11 @@ void function attachSword(entity titan){
 		return
 	}
 
-	entity sword1 = CreateAttachedModel(titan, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_R_shoulder", <0,180,0>)
-	entity sword2 = CreateAttachedModel(titan, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_L_shoulder", <0,0,180>)
+	entity sword1 = CreateAttachedModel(titan, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_R_shoulder", <0,0,0>)
+	//entity sword2 = CreateAttachedModel(titan, $"models/weapons/titan_sword/w_titan_sword_prime.mdl", "exp_L_shoulder", <180,0,0>)
 
-	swords.pairs[titan] <- [sword1, sword2];
+	//swords.pairs[titan] <- [sword1, sword2];
+	swords.pairs[titan] <- [sword1];
 }
 
 void function deleteSword(entity titan){
